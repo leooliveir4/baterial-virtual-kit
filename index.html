@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bateria virtual tocada pelo teclado, mouse ou toque, com composição de sequências.">
+    <meta name="theme-color" content="#0d0a14">
+    <title>Bateria Virtual</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%237c3aed'/%3E%3Cellipse cx='16' cy='12' rx='10' ry='4' fill='none' stroke='white' stroke-width='2.5'/%3E%3Cpath d='M6 12v8c0 2.2 4.5 4 10 4s10-1.8 10-4v-8' fill='none' stroke='white' stroke-width='2.5'/%3E%3C/svg%3E">
+    <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <svg class="sprites" aria-hidden="true" focusable="false">
+        <defs>
+            <radialGradient id="g-cymbal" cx="50%" cy="45%" r="60%">
+                <stop offset="0" stop-color="#ffe7ad"/>
+                <stop offset=".35" stop-color="#e6b65a"/>
+                <stop offset=".75" stop-color="#b47f2c"/>
+                <stop offset="1" stop-color="#6b4413"/>
+            </radialGradient>
+            <linearGradient id="g-chrome" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f4f2fa"/>
+                <stop offset=".45" stop-color="#9c98ad"/>
+                <stop offset=".7" stop-color="#e3e0ec"/>
+                <stop offset="1" stop-color="#6c687c"/>
+            </linearGradient>
+            <linearGradient id="g-shell" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#170b26"/>
+                <stop offset=".25" stop-color="#43206d"/>
+                <stop offset=".5" stop-color="#5b2c91"/>
+                <stop offset=".75" stop-color="#43206d"/>
+                <stop offset="1" stop-color="#170b26"/>
+            </linearGradient>
+            <radialGradient id="g-head-dark" cx="45%" cy="40%" r="70%">
+                <stop offset="0" stop-color="#4a2c78"/>
+                <stop offset="1" stop-color="#1e1033"/>
+            </radialGradient>
+            <radialGradient id="g-head-light" cx="40%" cy="35%" r="75%">
+                <stop offset="0" stop-color="#f7f3fb"/>
+                <stop offset="1" stop-color="#c9bfd8"/>
+            </radialGradient>
+            <radialGradient id="g-kick-head" cx="50%" cy="45%" r="60%">
+                <stop offset="0" stop-color="#241539"/>
+                <stop offset="1" stop-color="#0b0712"/>
+            </radialGradient>
+            <radialGradient id="g-pad" cx="50%" cy="40%" r="70%">
+                <stop offset="0" stop-color="#2d2340"/>
+                <stop offset="1" stop-color="#120e1a"/>
+            </radialGradient>
+            <filter id="f-glow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="6"/>
+            </filter>
+        </defs>
+        <symbol id="cymbal" viewBox="0 0 240 130">
+            <ellipse cx="120" cy="68" rx="116" ry="52" fill="url(#g-cymbal)"/>
+            <g fill="none" stroke="#5a3a0e" stroke-opacity=".22">
+                <ellipse cx="120" cy="67" rx="98" ry="43"/>
+                <ellipse cx="120" cy="66" rx="79" ry="34"/>
+                <ellipse cx="120" cy="65" rx="60" ry="25"/>
+                <ellipse cx="120" cy="64" rx="42" ry="17"/>
+            </g>
+            <ellipse cx="94" cy="52" rx="56" ry="16" fill="#fff" fill-opacity=".14"/>
+            <ellipse cx="120" cy="63" rx="24" ry="11" fill="#a8762a"/>
+            <ellipse cx="120" cy="60" rx="14" ry="6" fill="#d9a54c"/>
+        </symbol>
+        <symbol id="drum" viewBox="0 0 200 190">
+            <path d="M8 70v76a92 36 0 0 0 184 0V70z" fill="url(#g-shell)"/>
+            <path d="M8 146a92 36 0 0 0 184 0" fill="none" stroke="url(#g-chrome)" stroke-width="6"/>
+            <g fill="url(#g-chrome)">
+                <rect x="24" y="100" width="7" height="34" rx="3"/>
+                <rect x="62" y="108" width="7" height="34" rx="3"/>
+                <rect x="131" y="108" width="7" height="34" rx="3"/>
+                <rect x="169" y="100" width="7" height="34" rx="3"/>
+            </g>
+            <ellipse cx="100" cy="70" rx="89" ry="33" style="fill: var(--head, url(#g-head-dark))"/>
+            <ellipse cx="100" cy="70" rx="70" ry="25" fill="none" stroke="#fff" stroke-opacity=".08"/>
+            <ellipse cx="100" cy="70" rx="93" ry="36" fill="none" stroke="url(#g-chrome)" stroke-width="7"/>
+        </symbol>
+        <symbol id="kick" viewBox="0 0 240 250">
+            <circle cx="120" cy="120" r="116" fill="#2a1446"/>
+            <circle cx="120" cy="120" r="116" fill="none" stroke="url(#g-chrome)" stroke-width="5"/>
+            <circle cx="120" cy="120" r="104" fill="url(#g-kick-head)"/>
+            <circle cx="120" cy="120" r="104" fill="none" stroke="url(#g-chrome)" stroke-width="4"/>
+            <g fill="url(#g-chrome)">
+                <rect x="218.7" y="146.4" width="8" height="14" rx="2" transform="rotate(108 222.7 153.4)"/>
+                <rect x="179.5" y="200.4" width="8" height="14" rx="2" transform="rotate(144 183.5 207.4)"/>
+                <rect x="52.5" y="200.4" width="8" height="14" rx="2" transform="rotate(216 56.5 207.4)"/>
+                <rect x="13.3" y="146.4" width="8" height="14" rx="2" transform="rotate(252 17.3 153.4)"/>
+                <rect x="13.3" y="79.6" width="8" height="14" rx="2" transform="rotate(288 17.3 86.6)"/>
+                <rect x="52.5" y="25.6" width="8" height="14" rx="2" transform="rotate(324 56.5 32.6)"/>
+                <rect x="116" y="5" width="8" height="14" rx="2"/>
+                <rect x="179.5" y="25.6" width="8" height="14" rx="2" transform="rotate(396 183.5 32.6)"/>
+                <rect x="218.7" y="79.6" width="8" height="14" rx="2" transform="rotate(432 222.7 86.6)"/>
+            </g>
+            <circle cx="120" cy="120" r="80" fill="none" stroke="#a855f7" stroke-width="8" filter="url(#f-glow)"/>
+            <circle cx="120" cy="120" r="80" fill="none" stroke="#c084fc" stroke-width="3"/>
+            <path d="M104 200h32l4 46h-40z" fill="url(#g-chrome)"/>
+            <rect x="112" y="188" width="16" height="16" rx="3" fill="#cfcbd9"/>
+        </symbol>
+        <symbol id="pad" viewBox="0 0 140 140">
+            <rect x="2" y="2" width="136" height="136" rx="22" fill="#1b1526" stroke="#3b2a57" stroke-width="2"/>
+            <rect x="14" y="14" width="112" height="112" rx="16" fill="url(#g-pad)"/>
+            <rect x="14" y="14" width="112" height="112" rx="16" fill="none" stroke="#a855f7" stroke-opacity=".55" stroke-width="2"/>
+            <circle cx="70" cy="70" r="34" fill="none" stroke="#a855f7" stroke-opacity=".3" stroke-width="2"/>
+            <circle cx="114" cy="26" r="3" fill="#c084fc"/>
+        </symbol>
+    </svg>
+
+    <header class="header">
+        <div class="brand">
+            <svg class="brand--icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><ellipse cx="16" cy="11" rx="12" ry="4.5"/><path d="M4 11v10c0 2.5 5.4 4.5 12 4.5s12-2 12-4.5V11M8 14.5v9M16 15.5v10M24 14.5v9M6 4l7 5M26 4l-7 5"/></svg>
+            <h1>Bateria Virtual</h1>
+        </div>
+        <div class="volume">
+            <label for="volume" class="volume--label">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path class="volume--wave" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>
+                <span class="sr-only">Volume</span>
+            </label>
+            <input type="range" id="volume" min="0" max="100" step="1" value="70" aria-valuetext="70%">
+            <output for="volume" class="volume--value">70%</output>
+        </div>
+    </header>
+
+    <main class="layout">
+        <section class="stage" aria-labelledby="kit-title">
+            <h2 class="sr-only" id="kit-title">Peças da bateria</h2>
+            <div class="kit">
+                <span class="stand stand--e" aria-hidden="true"></span>
+                <span class="stand stand--s" aria-hidden="true"></span>
+                <span class="stand stand--d" aria-hidden="true"></span>
+
+                <div class="piece piece--pad piece--q">
+                    <button type="button" class="piece--button" data-key="keyq" aria-keyshortcuts="Q">
+                        <svg class="piece--art" viewBox="0 0 140 140" aria-hidden="true" focusable="false"><use href="#pad"/></svg>
+                        <span class="piece--label"><kbd>Q</kbd><span class="piece--name">Boom</span></span>
+                    </button>
+                </div>
+                <div class="piece piece--pad piece--w">
+                    <button type="button" class="piece--button" data-key="keyw" aria-keyshortcuts="W">
+                        <svg class="piece--art" viewBox="0 0 140 140" aria-hidden="true" focusable="false"><use href="#pad"/></svg>
+                        <span class="piece--label"><kbd>W</kbd><span class="piece--name">Palmas</span></span>
+                    </button>
+                </div>
+                <div class="piece piece--cymbal piece--e">
+                    <button type="button" class="piece--button" data-key="keye" aria-keyshortcuts="E">
+                        <svg class="piece--art" viewBox="0 0 240 130" aria-hidden="true" focusable="false"><use href="#cymbal"/></svg>
+                        <span class="piece--label"><kbd>E</kbd><span class="piece--name">Chimbal fechado</span></span>
+                    </button>
+                </div>
+                <div class="piece piece--kick piece--a">
+                    <button type="button" class="piece--button" data-key="keya" aria-keyshortcuts="A">
+                        <svg class="piece--art" viewBox="0 0 240 250" aria-hidden="true" focusable="false"><use href="#kick"/></svg>
+                        <span class="piece--label"><kbd>A</kbd><span class="piece--name">Bumbo</span></span>
+                    </button>
+                </div>
+                <div class="piece piece--cymbal piece--s">
+                    <button type="button" class="piece--button" data-key="keys" aria-keyshortcuts="S">
+                        <svg class="piece--art" viewBox="0 0 240 130" aria-hidden="true" focusable="false"><use href="#cymbal"/></svg>
+                        <span class="piece--label"><kbd>S</kbd><span class="piece--name">Chimbal aberto</span></span>
+                    </button>
+                </div>
+                <div class="piece piece--cymbal piece--d">
+                    <button type="button" class="piece--button" data-key="keyd" aria-keyshortcuts="D">
+                        <svg class="piece--art" viewBox="0 0 240 130" aria-hidden="true" focusable="false"><use href="#cymbal"/></svg>
+                        <span class="piece--label"><kbd>D</kbd><span class="piece--name">Prato de condução</span></span>
+                    </button>
+                </div>
+                <div class="piece piece--drum piece--z">
+                    <button type="button" class="piece--button" data-key="keyz" aria-keyshortcuts="Z">
+                        <svg class="piece--art" viewBox="0 0 200 190" aria-hidden="true" focusable="false"><use href="#drum"/></svg>
+                        <span class="piece--label"><kbd>Z</kbd><span class="piece--name">Caixa</span></span>
+                    </button>
+                </div>
+                <div class="piece piece--pad piece--x">
+                    <button type="button" class="piece--button" data-key="keyx" aria-keyshortcuts="X">
+                        <svg class="piece--art" viewBox="0 0 140 140" aria-hidden="true" focusable="false"><use href="#pad"/></svg>
+                        <span class="piece--label"><kbd>X</kbd><span class="piece--name">Clique</span></span>
+                    </button>
+                </div>
+                <div class="piece piece--drum piece--c">
+                    <button type="button" class="piece--button" data-key="keyc" aria-keyshortcuts="C">
+                        <svg class="piece--art" viewBox="0 0 200 190" aria-hidden="true" focusable="false"><use href="#drum"/></svg>
+                        <span class="piece--label"><kbd>C</kbd><span class="piece--name">Tom</span></span>
+                    </button>
+                </div>
+            </div>
+            <p class="stage--hint">Toque nas peças ou use o teclado.</p>
+        </section>
+
+        <aside class="panels">
+            <section class="panel composer" aria-labelledby="composer-title">
+                <h2 class="panel--title" id="composer-title">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
+                    Composição
+                </h2>
+                <label for="composition" class="sr-only">Sequência de teclas</label>
+                <textarea id="composition" rows="3" maxlength="400" spellcheck="false" autocomplete="off" placeholder="Ex.: a e z e a a z e" aria-describedby="composer-help"></textarea>
+                <div class="sequence" aria-hidden="true" hidden></div>
+                <p class="composer--help" id="composer-help">Cada caractere é um tempo. Espaços e letras sem som viram pausas.</p>
+                <div class="composer--actions">
+                    <button type="button" class="button button--primary composer--play">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 5v14l12-7z"/></svg>
+                        Reproduzir
+                    </button>
+                    <button type="button" class="button composer--stop" disabled>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="6" width="12" height="12" rx="1.5"/></svg>
+                        Parar
+                    </button>
+                    <button type="button" class="button composer--clear">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg>
+                        Limpar
+                    </button>
+                </div>
+                <p class="composer--status" role="status"></p>
+            </section>
+
+            <section class="panel keymap" aria-labelledby="keymap-title">
+                <h2 class="panel--title" id="keymap-title">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg>
+                    Teclas
+                </h2>
+                <dl class="keymap--list"></dl>
+            </section>
+        </aside>
+    </main>
+
+    <footer class="footer">Criado por Leonardo Oliveira</footer>
+
+    <audio id="s_keyq" src="sounds/keyq.wav" preload="auto"></audio>
+    <audio id="s_keyw" src="sounds/keyw.wav" preload="auto"></audio>
+    <audio id="s_keye" src="sounds/keye.wav" preload="auto"></audio>
+    <audio id="s_keya" src="sounds/keya.wav" preload="auto"></audio>
+    <audio id="s_keys" src="sounds/keys.wav" preload="auto"></audio>
+    <audio id="s_keyd" src="sounds/keyd.wav" preload="auto"></audio>
+    <audio id="s_keyz" src="sounds/keyz.wav" preload="auto"></audio>
+    <audio id="s_keyx" src="sounds/keyx.wav" preload="auto"></audio>
+    <audio id="s_keyc" src="sounds/keyc.wav" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
