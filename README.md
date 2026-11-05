@@ -1,6 +1,7 @@
 # Bateria Virtual
 
-Bateria virtual feita com HTML, CSS e JavaScript puro. Os sons podem ser tocados pelo teclado, pelo mouse ou pelo toque, e é possível escrever uma sequência de teclas e reproduzi-la como uma pequena composição.
+Bateria virtual feita com HTML, CSS e JavaScript puro. Este projeto foi desenvolvido inicialmente durante o curso de JavaScript da [B7Web](https://b7web.com.br) e, posteriormente, aprimorado para fins de estudo e portfólio: nova interface, interação por mouse e toque, controle de volume, reprodução de composições com parar e limpar, responsividade e acessibilidade.
+Os sons podem ser tocados pelo teclado, pelo mouse ou pelo toque, e é possível escrever uma sequência de teclas e reproduzi-la como uma pequena composição.
 
 ## Demonstração
 
@@ -66,10 +67,6 @@ Abrir o `index.html` diretamente também funciona, mas nesse modo o navegador n�
 ├── fonts/          Fonte Inter e sua licença
 └── docs/           Capturas de tela usadas neste README
 ```
-
-## Origem do projeto
-
-Este projeto foi desenvolvido inicialmente durante o curso de JavaScript da [B7Web](https://b7web.com.br) e, posteriormente, aprimorado para fins de estudo e portfólio: nova interface, interação por mouse e toque, controle de volume, reprodução de composições com parar e limpar, responsividade e acessibilidade.
 
 ## Créditos
 
