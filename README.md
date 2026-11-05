@@ -5,7 +5,7 @@ Os sons podem ser tocados pelo teclado, pelo mouse ou pelo toque, e é possível
 
 ## Demonstração
 
-<!-- Adicione aqui o link da versão publicada, por exemplo: https://seu-usuario.github.io/bateria-virtual/ -->
+<!-- Adicione aqui o link da versão publicada, por exemplo: https://leooliveir4.github.io/bateria-virtual/ -->
 
 ![Bateria virtual no desktop](docs/desktop.webp)
 
@@ -48,7 +48,7 @@ Os sons podem ser tocados pelo teclado, pelo mouse ou pelo toque, e é possível
 O projeto é um site estático e não precisa de instalação.
 
 ```bash
-git clone https://github.com/seu-usuario/bateria-virtual.git
+git clone https://github.com/leooliveir4/bateria-virtual.git
 cd bateria-virtual
 python3 -m http.server 8000
 ```
