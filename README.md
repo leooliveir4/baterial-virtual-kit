@@ -72,3 +72,4 @@ Abrir o `index.html` diretamente tamb√©m funciona, mas nesse modo o navegador n√
 
 - Curso de JavaScript da [B7Web](https://b7web.com.br), base do projeto original.
 - Sons fornecidos no material do curso.
+- SVG criados por IA
